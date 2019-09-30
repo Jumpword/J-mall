@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:  #这里尽量把驱动写上 不写会报错 具体原因不知道 某些版本上可以不写驱动
+      url:  mysql://localhost:3306/jmall
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:  #注册到服务列表
+  client:
+    service-url:
+      defaultZone:   http://127.0.0.1:10086/eureka
+  instance:  #保证拿到一定是ip 而不是localhost
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+
