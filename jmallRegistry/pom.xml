@@ -24,7 +24,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.jmall.RegistryApplication</mainClass>
+                    <mainClass>com.jmall.registry.RegistryApplicationn</mainClass>
                 </configuration>
             </plugin>
         </plugins>

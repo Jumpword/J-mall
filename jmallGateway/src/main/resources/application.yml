@@ -1,0 +1,23 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: jmal-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+zuul:
+  prefix:  /api #添加路由器前缀
+hystrix:    #（熔断器 线程隔离 服务降级）
+  command:
+    default:
+      executon:
+        isonlation:
+          thread:
+            timeoutInMillisenconds: 5000 #熔断超时5秒
+ribbon:   #负载均衡 （轮询 随机 hash）
+  ConnectTimeout: 1000 # ribbon连接超时时长
+  ReadTimeout: 3500 # ribbon读取超时时长
+  MaxAutoRetrise: 0 # 当前服务重试次数
+  MaxAutoRetriseNextServer: 0 # 切换服务重试次数

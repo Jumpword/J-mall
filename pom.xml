@@ -9,7 +9,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>jmallRegistry</module>
-        <module>jmallGatway</module>
+        <module>jmallGateway</module>
     </modules>
 
     <!--父工程打包方式为pom-->

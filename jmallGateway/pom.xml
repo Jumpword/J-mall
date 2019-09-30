@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jmall.common</groupId>
-    <artifactId>jmallGatway</artifactId>
+    <artifactId>jmallGateway</artifactId>
 
     <dependencies>
         <!--网关-->
