@@ -12,11 +12,9 @@
         <module>jmallGateway</module>
         <module>Item</module>
     </modules>
-
     <!--父工程打包方式为pom-->
     <packaging>pom</packaging>
     <name>jmall</name>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -71,6 +69,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <!--这里所有的子工程都可以依赖-->
     <dependencies>
         <dependency>
