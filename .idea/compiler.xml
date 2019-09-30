@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jmallRegistry" />
+        <module name="itemService" />
         <module name="jmallGateway" />
+        <module name="iteminterface" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +19,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="itemService" options="-parameters" />
+      <module name="iteminterface" options="-parameters" />
       <module name="jamll" options="" />
       <module name="jmallGateway" options="-parameters" />
       <module name="jmallRegistry" options="-parameters" />
