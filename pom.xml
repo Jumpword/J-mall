@@ -10,6 +10,7 @@
     <modules>
         <module>jmallRegistry</module>
         <module>jmallGateway</module>
+        <module>Item</module>
     </modules>
 
     <!--父工程打包方式为pom-->
