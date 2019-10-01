@@ -22,6 +22,7 @@ public class JsonUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class);
 
+    //将对象变成字符串（序列化）
     @Nullable
     public static String serialize(Object obj) {
         if (obj == null) {
@@ -37,7 +38,7 @@ public class JsonUtils {
             return null;
         }
     }
-
+    //反序列化
     @Nullable
     public static <T> T parse(String json, Class<T> tClass) {
         try {
@@ -67,7 +68,7 @@ public class JsonUtils {
             return null;
         }
     }
-
+      //复杂类型jason反序列化
     @Nullable
     public static <T> T nativeRead(String json, TypeReference<T> type) {
         try {
