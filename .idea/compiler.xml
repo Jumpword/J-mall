@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="jmallCommon" />
         <module name="itemService" />
         <module name="jmallRegistry" />
         <module name="jmallGateway" />
@@ -21,7 +22,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="itemService" options="-parameters" />
       <module name="iteminterface" options="-parameters" />
-      <module name="jamll" options="" />
+      <module name="jmall" options="" />
+      <module name="jmallCommon" options="-parameters" />
       <module name="jmallGateway" options="-parameters" />
       <module name="jmallRegistry" options="-parameters" />
       <module name="jmallregistry" options="-parameters" />

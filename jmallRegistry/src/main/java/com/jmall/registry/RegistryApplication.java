@@ -1,6 +1,5 @@
 package com.jmall.registry;
 
-import com.sun.jersey.core.impl.provider.xml.SAXParserContextProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;

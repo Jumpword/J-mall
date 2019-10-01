@@ -11,6 +11,7 @@
         <module>jmallRegistry</module>
         <module>jmallGateway</module>
         <module>Item</module>
+        <module>jmallCommon</module>
     </modules>
     <!--父工程打包方式为pom-->
     <packaging>pom</packaging>

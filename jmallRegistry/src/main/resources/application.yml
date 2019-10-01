@@ -7,3 +7,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
+  #  fetch-registry: false 配置是否要拉取服务列表
+  # register-with-eureka: false 配置要不要把自己注册到服务列表

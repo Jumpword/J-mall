@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: jmal-gateway
+    #把网关注册到服务列表
 eureka:
   client:
     service-url:

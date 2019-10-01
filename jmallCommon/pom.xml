@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jamll</artifactId>
+        <groupId>com.jmall.parent</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jmall.common</groupId>
+    <artifactId>jmallCommon</artifactId>
+
+    <!--这是一个工具包 一般协作开发时要把它传到私服-->
+     <dependencies>
+         <!--Servelt依赖-->
+         <dependency>
+             <groupId>org.apache.tomcat.embed</groupId>
+             <artifactId>tomcat-embed-core</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <!--日志依赖-->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-logging</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>com.fasterxml.jackson.core</groupId>
+             <artifactId>jackson-databind</artifactId>
+             <version>2.9.9.3</version>
+             <scope>compile</scope>
+         </dependency>
+     </dependencies>
+
+</project>
