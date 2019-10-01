@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: item-service
-  datasource:  #不用写驱动
+  datasource:  #这里尽量把驱动写上 不写会报错 具体原因不知道 某些版本上可以不写驱动
       url:  mysql://localhost:3306/jmall
       username: root
       password: root
