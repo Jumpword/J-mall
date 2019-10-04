@@ -3,8 +3,6 @@ package com.jmall.dto;
 import com.jmall.enums.ExceptionEnum;
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * @Author jumping-張文平
  * @Date 2019/10/2 9:29

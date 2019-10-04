@@ -1,7 +1,6 @@
 package com.jmall.advice;
 
 import com.jmall.dto.ExceptionResult;
-import com.jmall.enums.ExceptionEnum;
 import com.jmall.exception.JmallException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

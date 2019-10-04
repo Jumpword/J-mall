@@ -13,7 +13,7 @@
     <artifactId>Item</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>item-interface</module>
+        <module>iteminterface</module>
         <module>itemService</module>
     </modules>
 
