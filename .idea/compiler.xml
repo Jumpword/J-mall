@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jmallGateway" />
-        <module name="itemService" />
-        <module name="jmallRegistry" />
         <module name="jmallCommon" />
         <module name="iteminterface" />
+        <module name="jmallRegistry" />
+        <module name="jmallGateway" />
+        <module name="itemService" />
       </profile>
     </annotationProcessing>
   </component>

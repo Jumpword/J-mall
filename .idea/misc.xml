@@ -12,6 +12,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Item/iteminterface/pom.xml" />
         <option value="$PROJECT_DIR$/jmall-registry/pom.xml" />
       </set>
     </option>
