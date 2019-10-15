@@ -29,11 +29,11 @@ public class BrandServiceImpl {
 
     public PageResult<Brand> queryBrandByPage(Integer page, Integer rows, String sortBy, Boolean desc, String key) {
         // 分页
-        Page<Object> objects = PageHelper.startPage(page, rows);
+        PageHelper.startPage(page, rows);
 
         //  过滤
         Example example = new Example(Brand.class);
-        if(StringUtils.isNoneBlank(key)){
+        if(StringUtils.isNotBlank(key)){
             //过滤条件
             example.createCriteria().orLike("name","%"+key+"%")
                     .orEqualTo("letter",key.toUpperCase());

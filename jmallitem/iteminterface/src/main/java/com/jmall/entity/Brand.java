@@ -2,7 +2,6 @@ package com.jmall.entity;
 
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,6 +17,6 @@ public class Brand {
     @KeySql(useGeneratedKeys = true)
     private Long id;
     private String name;
-    private Long image;
+    private String image;
     private Character letter;
 }
