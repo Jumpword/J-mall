@@ -31,8 +31,8 @@ public class CategoryController {
     */
     @GetMapping("list")
     public ResponseEntity<List<Category>> queryCategoryByPid(@RequestParam("pid")Long pid){
-
-        return ResponseEntity.ok(categoryService.queryCategoryByPid(pid));
+        List<Category> categories = categoryService.queryCategoryByPid(pid);
+        return ResponseEntity.ok(categories);
     }
 
 
