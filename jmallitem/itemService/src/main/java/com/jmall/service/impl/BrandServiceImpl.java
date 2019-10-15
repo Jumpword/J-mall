@@ -1,6 +1,5 @@
 package com.jmall.service.impl;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jmall.dto.PageResult;
@@ -15,7 +14,6 @@ import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
-import java.util.jar.JarException;
 
 /**
  * @Author jumping-張文平
@@ -33,28 +31,28 @@ public class BrandServiceImpl {
 
         //  过滤
         Example example = new Example(Brand.class);
-        if(StringUtils.isNotBlank(key)){
+        if (StringUtils.isNotBlank(key)) {
             //过滤条件
-            example.createCriteria().orLike("name","%"+key+"%")
-                    .orEqualTo("letter",key.toUpperCase());
+            example.createCriteria().orLike("name", "%" + key + "%")
+                    .orEqualTo("letter", key.toUpperCase());
 
         }
         // 排序
-        if(StringUtils.isNotBlank(sortBy)){
+        if (StringUtils.isNotBlank(sortBy)) {
 
             // ORDER BY id DESC 根据哪个字段排序是否要降序
-            String clause = sortBy+(desc ? "DESC" : "ASC");
+            String clause = sortBy + " " + (desc ? "DESC" : "ASC");
             example.setOrderByClause(clause);
         }
 
         // 查询
         List<Brand> brands = brandMapper.selectByExample(example);
-        if(CollectionUtils.isEmpty(brands)){
+        if (CollectionUtils.isEmpty(brands)) {
             throw new JmallException(ExceptionEnum.BRAND_NOT_FOUND);
         }
 
         //解析分页结果
         PageInfo<Brand> brandPageInfo = new PageInfo<>(brands);
-        return new PageResult<>(brandPageInfo.getTotal(),brands);
+        return new PageResult<>(brandPageInfo.getTotal(), brands);
     }
 }
