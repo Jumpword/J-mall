@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jmallCommon" />
+        <module name="iteminterface" />
+        <module name="jmallGateway" />
         <module name="itemService" />
         <module name="jmallRegistry" />
-        <module name="jmallGateway" />
-        <module name="iteminterface" />
+        <module name="jmallCommon" />
+        <module name="jmallUnload" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,6 +23,7 @@
       <module name="jmallCommon" options="-parameters" />
       <module name="jmallGateway" options="-parameters" />
       <module name="jmallRegistry" options="-parameters" />
+      <module name="jmallUnload" options="-parameters" />
     </option>
   </component>
 </project>
