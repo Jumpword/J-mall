@@ -12,6 +12,11 @@ zuul:
   prefix:  /api #添加路由器前缀
   routes:
     item-service: /item/**
+    upload-service:
+      path: /upload/**
+      service: upload-service
+      strip-prefix: false #去掉前缀
+
 hystrix:    #（熔断器 线程隔离 服务降级）
   command:
     default:
