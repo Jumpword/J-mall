@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jmallCommon" />
-        <module name="iteminterface" />
+        <module name="itemService" />
         <module name="jmallRegistry" />
         <module name="jmallGateway" />
-        <module name="itemService" />
+        <module name="iteminterface" />
       </profile>
     </annotationProcessing>
   </component>

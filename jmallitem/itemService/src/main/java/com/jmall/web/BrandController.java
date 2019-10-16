@@ -4,11 +4,11 @@ import com.jmall.dto.PageResult;
 import com.jmall.entity.Brand;
 import com.jmall.service.impl.BrandServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @Author jumping-張文平
@@ -30,7 +30,17 @@ public class BrandController {
             @RequestParam(value = "desc",defaultValue = "false") Boolean desc,
             @RequestParam(value = "key",required = false) String key
     ){
-       PageResult<Brand> pageResult = brandService.queryBrandByPage(page,rows,sortBy,desc,key);
+       PageResult<Brand> pageResult = brandService.queryBrandByPage(
+               page,rows,sortBy,desc,key);
         return ResponseEntity.ok(pageResult);
+    }
+
+    @PostMapping("save")
+    public ResponseEntity<Void> saveBrand(
+            Brand brand, @RequestParam("cids") List<Long> cids
+            ){
+        brandService.saveBrand(brand,cids);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+
     }
 }
