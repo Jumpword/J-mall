@@ -12,7 +12,7 @@
         <module>jmallGateway</module>
         <module>jmallitem</module>
         <module>jmallCommon</module>
-        <module>jmallUnload</module>
+        <module>jmallUpload</module>
     </modules>
     <!--父工程打包方式为pom-->
     <packaging>pom</packaging>
