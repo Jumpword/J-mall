@@ -14,3 +14,15 @@ eureka:
   instance:
     ip-address: 127.0.0.1
     prefer-ip-address: true
+# ===================================================================
+# 分布式文件系统FDFS配置
+# ===================================================================
+fdfs:
+  so-timeout: 2501
+  connect-timeout: 601
+  thumb-image:             #缩略图生成参数
+    width: 60
+    height: 60
+  tracker-list:            #TrackerList参数,支持多个
+    - 192.168.1.105:22122
+    - 192.168.1.106:22122
