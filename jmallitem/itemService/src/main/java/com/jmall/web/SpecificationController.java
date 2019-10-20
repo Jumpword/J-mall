@@ -1,6 +1,7 @@
 package com.jmall.web;
 
 import com.jmall.entity.SpecGroup;
+import com.jmall.entity.SpecParam;
 import com.jmall.service.impl.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,4 +26,9 @@ public class SpecificationController {
         return ResponseEntity.ok(list);
     }
 
+    @GetMapping("param")
+    public ResponseEntity<List<SpecParam>> queryParamsById(@RequestParam Long gid){
+        List<SpecParam> list = specificationService.queryParamsById(gid);
+        return ResponseEntity.ok(list);
+    }
 }

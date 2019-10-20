@@ -21,7 +21,7 @@ public class SpecParam {
     private Long cid;
     private Long groupId;
     private String name;
-    @Column(name = "`numeric`")
+    @Column(name = "`numeric`")  //取别名 因为numeric在sql中是关键字
     private Boolean numeric;//是否为数值类型
     private String unit;//数值类型单位，若是非数值类型那么为空
     private Boolean generic;//是否为sku通用属性
