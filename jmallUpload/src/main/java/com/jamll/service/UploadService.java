@@ -2,11 +2,14 @@ package com.jamll.service;
 
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
+import com.jamll.config.UploadProperties;
 import com.jmall.enums.ExceptionEnum;
 import com.jmall.exception.JmallException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import javax.imageio.ImageIO;
@@ -22,15 +25,18 @@ import java.util.List;
  */
 @Service
 @Slf4j
+@EnableConfigurationProperties(UploadProperties.class)
 public class UploadService {
     @Autowired
+    private UploadProperties props;
+    @Autowired
     private FastFileStorageClient storageClient;
-    private static final List<String> ALLOW_TYPES = Arrays.asList("image/png","image/jpeg","image/bmp");
+   /* private static final List<String> ALLOW_TYPES = Arrays.asList("image/png","image/jpeg","image/bmp");*/
     public String uploadImage(MultipartFile file) {
         try {
             //检验文件类型
             String contentType = file.getContentType();
-            if(!ALLOW_TYPES.contains(contentType)){
+            if(!props.getAllowTypes().contains(contentType)){
                 throw new JmallException(ExceptionEnum.INVALID_FILE_TYPE);
             }
             //检验文件内容
@@ -44,7 +50,7 @@ public class UploadService {
             String extension = StringUtils.substringAfterLast(file.getOriginalFilename(),".");
             StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), extension, null);
             //返回一个访问路径
-            return "http://image.jmall.com/"+storePath.getFullPath();
+            return props.getBaseUrl()+storePath.getFullPath();
         } catch (IOException e) {
             log.error("上传图片失败",e);
             throw new JmallException(ExceptionEnum.FILE_UPLOAD_ERROR);

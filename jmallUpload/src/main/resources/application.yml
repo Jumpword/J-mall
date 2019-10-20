@@ -26,3 +26,10 @@ fdfs:
   tracker-list:            #TrackerList参数,支持多个
     - 192.168.1.105:22122
     - 192.168.1.106:22122
+jmall:
+    upload:
+        baseUrl: http://image.jmall.com/
+        allowTypes:
+          - image/png
+          - image/jpeg
+          - image/bmp
