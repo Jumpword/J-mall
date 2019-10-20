@@ -19,7 +19,7 @@ public class SpecParam {
     @KeySql(useGeneratedKeys = true)
     private Long id;
     private Long cid;
-    private Long grouId;
+    private Long groupId;
     private String name;
     @Column(name = "`numeric`")
     private Boolean numeric;//是否为数值类型
