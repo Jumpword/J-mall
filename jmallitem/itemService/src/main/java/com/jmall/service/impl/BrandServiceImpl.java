@@ -51,19 +51,28 @@ public class BrandServiceImpl {
         PageInfo<Brand> brandPageInfo = new PageInfo<>(brands);
         return new PageResult<>(brandPageInfo.getTotal(), brands);
     }
+
     @Transactional
     public void saveBrand(Brand brand, List<Long> cids) {
         brand.setId(null);
         int count = brandMapper.insert(brand);
-        if(count!=1){
+        if (count != 1) {
             throw new JmallException(ExceptionEnum.BRAND_SAVE_ERROR);
         }
         //新增中间表
-        for(Long cid : cids){
-             count = brandMapper.insertBrandCategory(cid, brand.getId());
-             if(count!=1){
-                 throw new JmallException(ExceptionEnum.BRAND_SAVE_ERROR);
-             }
+        for (Long cid : cids) {
+            count = brandMapper.insertBrandCategory(cid, brand.getId());
+            if (count != 1) {
+                throw new JmallException(ExceptionEnum.BRAND_SAVE_ERROR);
+            }
         }
+    }
+
+    public Brand queryBrandById(Long id) {
+        Brand brand = brandMapper.selectByPrimaryKey(id);
+        if (brand==null){
+            throw new JmallException(ExceptionEnum.BRAND_NOT_FOUND);
+        }
+        return brand;
     }
 }
