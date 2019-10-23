@@ -6,7 +6,6 @@ import com.jmall.enums.ExceptionEnum;
 import com.jmall.exception.JmallException;
 import com.jmall.mapper.SpecGroupMapper;
 import com.jmall.mapper.SpecParamMapper;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -35,9 +34,11 @@ public class SpecificationService {
         return list;
     }
 
-    public List<SpecParam> queryParamsById(Long gid) {
+    public List<SpecParam> queryParamsById(Long gid,Long cid,Boolean searching) {
         SpecParam specParam = new SpecParam();
         specParam.setGroupId(gid);
+        specParam.setCid(cid);
+        specParam.setSearching(searching);
         List<SpecParam> list = specParamMapper.select(specParam);
         if (CollectionUtils.isEmpty(list)){
             throw new JmallException(ExceptionEnum.SPEC_PARAME_NOT_FOUND);
