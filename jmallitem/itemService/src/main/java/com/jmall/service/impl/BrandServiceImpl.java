@@ -26,6 +26,14 @@ public class BrandServiceImpl {
     @Autowired
     private BrandMapper brandMapper;
 
+    public List<Brand> queryBrandByCid(Long cid) {
+        List<Brand> brands = brandMapper.queryBrandByCategoryId(cid);
+        if (CollectionUtils.isEmpty(brands)){
+            throw new JmallException(ExceptionEnum.BRAND_NOT_FOUND);
+        }
+        return brands;
+    }
+
     public PageResult<Brand> queryBrandByPage(Integer page, Integer rows, String sortBy, Boolean desc, String key) {
         // 分页
         PageHelper.startPage(page, rows);
