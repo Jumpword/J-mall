@@ -19,8 +19,9 @@ public enum ExceptionEnum {
     FILE_UPLOAD_ERROR(500,"上传文件失败"),
     INVALID_FILE_TYPE(500,"无效的文件类型"),
     SPECIFICATION_NOT_FOUND(404,"商品规格组未找到"),
-    SPEC_PARAME_NOT_FOUND(404,"商品规格参数未找到"),
-    GOODS_NOT_FOUND(404,"商品未找到")
+    SPEC_PARAM_NOT_FOUND(404,"商品规格参数未找到"),
+    GOODS_NOT_FOUND(404,"商品未找到"),
+    GOODS_SAVE_ERROR(500,"新增商品失败")
     ;
     private int code;
     private String msg;

@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author jumping-張文平
@@ -36,5 +37,12 @@ public class Spu {
     private String bName;
     @Transient
     private String cName;
+
+    @Transient
+    private List<Sku> skus;
+
+    @Transient
+    private SpuDetail spuDetail;
+
 
 }

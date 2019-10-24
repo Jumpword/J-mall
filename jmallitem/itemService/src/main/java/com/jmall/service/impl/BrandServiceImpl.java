@@ -62,6 +62,7 @@ public class BrandServiceImpl {
 
     @Transactional
     public void saveBrand(Brand brand, List<Long> cids) {
+        //新增品牌
         brand.setId(null);
         int count = brandMapper.insert(brand);
         if (count != 1) {

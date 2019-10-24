@@ -41,7 +41,7 @@ public class SpecificationService {
         specParam.setSearching(searching);
         List<SpecParam> list = specParamMapper.select(specParam);
         if (CollectionUtils.isEmpty(list)){
-            throw new JmallException(ExceptionEnum.SPEC_PARAME_NOT_FOUND);
+            throw new JmallException(ExceptionEnum.SPEC_PARAM_NOT_FOUND);
         }
         return list;
     }
