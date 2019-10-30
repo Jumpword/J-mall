@@ -21,8 +21,18 @@ public enum ExceptionEnum {
     SPECIFICATION_NOT_FOUND(404,"商品规格组未找到"),
     SPEC_PARAM_NOT_FOUND(404,"商品规格参数未找到"),
     GOODS_NOT_FOUND(404,"商品未找到"),
-    GOODS_SAVE_ERROR(500,"新增商品失败")
+    GOODS_SAVE_ERROR(500,"新增商品失败"),
+    GOODS_DETAIL_NOT_FOUND(404,"商品详情未找到"),
+    GOODS_SKU_NOT_FOUND(404,"商品通用属性未找到"),
+    GOODS_STOCK_NOT_FOUND(404,"商品库存未找到"),
+    GOODS_UPDATE_ERROR(500,"更新商品失败"),
+    GOODS_DETAIL_UPDATE_ERROR(500,"更新SpuDetail"),
+    GOODS_ID_CANNOT_BE_NULL(500,"商品id不能为空"),
+    VIDEO_NOT_FOUND(404,"视频未找到")
     ;
+
+
+
     private int code;
     private String msg;
 

@@ -25,7 +25,7 @@ public class BrandController {
     @GetMapping("page")
     public ResponseEntity<PageResult<Brand>> queryBrandByPage(
             @RequestParam(value = "page",defaultValue = "1") Integer page,
-            @RequestParam(value = "rows",defaultValue = "5") Integer rows,
+            @RequestParam(value = "rows",defaultValue = "20") Integer rows,
             @RequestParam(value = "sortBy",required = false) String sortBy,
             @RequestParam(value = "desc",defaultValue = "false") Boolean desc,
             @RequestParam(value = "key",required = false) String key
@@ -45,8 +45,15 @@ public class BrandController {
     }
 
     @GetMapping("cid/{cid}")
-    public ResponseEntity<List<Brand>> queryBrandByCategoryId(@PathVariable Long cid){
+    public ResponseEntity<List<Brand>> queryBrandByCategoryId(@PathVariable("cid") Long cid){
         List<Brand> brands = brandService.queryBrandByCid(cid);
         return ResponseEntity.ok(brands);
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Brand> queryBrandById(@PathVariable("id") Long id){
+        Brand brand = brandService.queryBrandById(id);
+        return ResponseEntity.ok(brand);
+    }
+
 }

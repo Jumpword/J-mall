@@ -18,5 +18,6 @@ public class ExceptionResult {
         this.status =  em.getCode();
         this.msg = em.getMsg();
         this.timetamp = System.currentTimeMillis();
+
     }
 }

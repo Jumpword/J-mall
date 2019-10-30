@@ -30,6 +30,13 @@ public class CategoryServiceImpl {
         return categoryList;
     }
 
+    /**
+     *
+     * @param ids
+     * @data 2019/10/30 20:50
+     *
+     * @return
+     */
     public List<Category> queryById(List<Long> ids){
         List<Category> categories = caregoryMapper.selectByIdList(ids);
         if(CollectionUtils.isEmpty(categories)){

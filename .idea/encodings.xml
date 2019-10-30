@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/jmallCommon" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jmallGateway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jmallRegistry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jmallSearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jmallUpload" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jmallitem" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jmallitem/itemService" charset="UTF-8" />

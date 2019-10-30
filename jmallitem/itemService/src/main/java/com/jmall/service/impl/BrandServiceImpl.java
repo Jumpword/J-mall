@@ -25,7 +25,13 @@ import java.util.List;
 public class BrandServiceImpl {
     @Autowired
     private BrandMapper brandMapper;
-
+    /**
+     *在service层通过cid查询所有符合的品牌
+     * @param cid
+     * @data 2019/10/28 17:46
+     *
+     * @return
+     */
     public List<Brand> queryBrandByCid(Long cid) {
         List<Brand> brands = brandMapper.queryBrandByCategoryId(cid);
         if (CollectionUtils.isEmpty(brands)){

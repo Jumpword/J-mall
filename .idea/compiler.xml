@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="iteminterface" />
+        <module name="jmallSearch" />
         <module name="jmallGateway" />
         <module name="jmallUpload" />
         <module name="itemService" />
@@ -23,6 +24,7 @@
       <module name="jmallCommon" options="-parameters" />
       <module name="jmallGateway" options="-parameters" />
       <module name="jmallRegistry" options="-parameters" />
+      <module name="jmallSearch" options="-parameters" />
       <module name="jmallUpload" options="-parameters" />
     </option>
   </component>
