@@ -1,5 +1,4 @@
 package com.jmall.api;
-
 import com.jmall.dto.PageResult;
 import com.jmall.entity.Sku;
 import com.jmall.entity.Spu;
@@ -15,6 +14,17 @@ import java.util.List;
  */
 public interface GoodsApi {
 
+
+    /**
+     *分页查询Spu
+     * @param page
+	 * @param rows
+	 * @param key
+	 * @param saleable
+     * @data 2019/10/31 14:20
+     * [page, rows, key, saleable]
+     * @return com.jmall.dto.PageResult<com.jmall.entity.Spu>
+     */
     @GetMapping("/spu/page")
     PageResult<Spu> querySpuByPage(
             @RequestParam(value = "page",defaultValue = "1") Integer page,
@@ -23,15 +33,24 @@ public interface GoodsApi {
             @RequestParam(value = "saleable",defaultValue = "true") Boolean saleable
     );
 
-    @PostMapping("goods")
-    Void saveGoods(@RequestBody Spu spu);
-
+    /**
+     *根据spuId查询SpuDetail
+     * @param spuId
+     * @data 2019/10/31 14:18
+     * [spuId]
+     * @return com.jmall.entity.SpuDetail
+     */
     @GetMapping("/spu/detail/{id}")
     SpuDetail queryDetailById(@PathVariable("id") Long spuId);
 
-    @GetMapping("sku/list")
-    List<Sku> querySkuListBySId(@RequestParam("id") Long spuId);
 
-    @PutMapping("goods")
-    Void updateGoods(@RequestBody Spu spu);
+    /**
+     *根据spuId 查询所有sku
+     * @param spuId
+     * @data 2019/10/31 14:18
+     * [spuId]
+     * @return java.util.List<com.jmall.entity.Sku>
+     */
+    @GetMapping("sku/list")
+    List<Sku> querySkuListBySpuId(@RequestParam("id") Long spuId);
 }

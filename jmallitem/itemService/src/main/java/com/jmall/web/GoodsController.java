@@ -81,7 +81,7 @@ public class GoodsController {
      * @return org.springframework.http.ResponseEntity<java.util.List<com.jmall.entity.Sku>>
      */
     @GetMapping("sku/list")
-    public ResponseEntity<List<Sku>> querySkuListBySId(@RequestParam("id") Long spuId){
+    public ResponseEntity<List<Sku>> querySkuListBySpuId(@RequestParam("id") Long spuId){
         List<Sku> skuList = goodsService.querySkuListBySpuId(spuId);
         return ResponseEntity.ok(skuList);
     }
