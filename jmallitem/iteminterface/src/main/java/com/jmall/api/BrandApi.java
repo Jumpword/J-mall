@@ -1,7 +1,6 @@
 package com.jmall.api;
 
 import com.jmall.entity.Brand;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -12,5 +11,5 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 public interface BrandApi {
     @GetMapping("brand/{id}")
-    ResponseEntity<Brand> queryBrandById(@PathVariable("id") Long id);
+   Brand queryBrandById(@PathVariable("id") Long id);
 }

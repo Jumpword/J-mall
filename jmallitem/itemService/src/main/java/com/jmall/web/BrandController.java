@@ -50,6 +50,14 @@ public class BrandController {
         return ResponseEntity.ok(brands);
     }
 
+
+    /**
+     * 根据id查询品牌
+     * @param id
+     * @data 2019/11/22 12:23
+     * [id]
+     * @return org.springframework.http.ResponseEntity<com.jmall.entity.Brand>
+     */
     @GetMapping("{id}")
     public ResponseEntity<Brand> queryBrandById(@PathVariable("id") Long id){
         Brand brand = brandService.queryBrandById(id);

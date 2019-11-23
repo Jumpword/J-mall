@@ -1,13 +1,13 @@
 package com.jmall.client;
-import com.jmall.api.CategoryApi;
+
+import com.jmall.api.BrandApi;
 import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * @Author jumping-張文平
- * @Date 2019/10/30 21:06
+ * @Date 2019/11/22 14:23
  * @Version 1.0
  */
-
 @FeignClient("item-service")
-public interface CategoryClient extends CategoryApi {
+public interface BrandClient extends BrandApi {
 }

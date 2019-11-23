@@ -1,5 +1,6 @@
 package com.jmall.pojo;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
@@ -10,10 +11,14 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ *
+ * 用来搜索展示的封装类
+ *
  * @Author jumping-張文平
  * @Date 2019/10/30 17:12
  * @Version 1.0
  */
+@Data
 @Document(indexName = "goods",type = "docs",shards = 1,replicas = 0)
 public class Goods {
     @Id
